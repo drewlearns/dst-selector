@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: drewlearnsdstselector 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: drewlearnsdstselector
+  template:
+    metadata:
+      labels:
+        app: drewlearnsdstselector 
+    spec:
+      containers:
+        - name: drewlearnsdstselector 
+          image: containerregistry4pd7i.azurecr.io/drewlearnsdstselector
+          ports:
+          - containerPort: 80
